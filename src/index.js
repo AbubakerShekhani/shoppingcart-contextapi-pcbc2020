@@ -1,10 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-
+import Routes from './routes/index'
+import { HelmetProvider } from 'react-helmet-async'
+import ProductsContextProvider from './contexts/ProductContext';
 
 ReactDOM.render(
-    <App />,
+  <HelmetProvider>
+    <ProductsContextProvider>
+      <Routes />
+    </ProductsContextProvider>
+  </HelmetProvider>,
   document.getElementById('root')
 );
