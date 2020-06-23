@@ -1,7 +1,7 @@
 const sumCartItems = (cartItems) => {
-  let itemCount = cartItems.reduce((total, product) => total + product.quantity, 0)
+  let itemsCount = cartItems.reduce((total, product) => total + product.quantity, 0)
   let total = cartItems.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2)
-  return { itemCount, total }
+  return { itemsCount, total }
 }
 
 export const AppReducer = (state, action) => {
@@ -32,9 +32,42 @@ export const AppReducer = (state, action) => {
     case "CLEAR_CART":
         return {
           shopCartItems: [],
-          itemCount: 0,
+          itemsCount: 0,
           total: 0
         }
+
+    case "INCREMENT":
+      state.shopCartItems[state.shopCartItems.findIndex(item => item.id === action.payload.id)].quantity++
+
+      return {
+        ...state,
+        ...sumCartItems(state.shopCartItems),
+        shopCartItems: [...state.shopCartItems]
+      }
+
+    case "DECREMENT":
+      state.shopCartItems[state.shopCartItems.findIndex(item => item.id === action.payload.id)].quantity--
+
+      return {
+        ...state,
+        ...sumCartItems(state.shopCartItems),
+        shopCartItems: [...state.shopCartItems]
+      }
+
+    case "CHECKOUT":
+      return {
+        shopCartItems: [],
+        itemsCount: 0,
+        total: 0,
+        checkOut: true
+      }
+
+    case "CLEAR":
+      return {
+        shopCartItems: [],
+        itemsCount: 0,
+        total: 0
+      }
 
     default:
       return state;

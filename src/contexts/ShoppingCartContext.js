@@ -27,9 +27,29 @@ const ShoppingCartContextProvider = ({children}) => {
     dispatch({type: 'CLEAR_CART'})
   }
 
+  const increment = (payload) => {
+
+    dispatch({type: 'INCREMENT', payload})
+  }
+
+  const decrement = (payload) => {
+    dispatch({type: 'DECREMENT', payload})
+  }
+
+  const handleCheckOut = () => {
+    dispatch({type: 'CHECKOUT'})
+  }
+
   return (
     <ShoppingCartContext.Provider value= {
-      {...state}
+      {...state,
+      addProduct,
+      removeProduct,
+      clearCart,
+      increment,
+      decrement,
+      handleCheckOut
+      }
     }
     >
       { children }
