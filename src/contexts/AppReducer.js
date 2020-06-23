@@ -29,6 +29,13 @@ export const AppReducer = (state, action) => {
         shopCartItems: [...state.shopCartItems.filter(item => item.id !== action.payload.id)]
       }
 
+    case "CLEAR_CART":
+        return {
+          shopCartItems: [],
+          itemCount: 0,
+          total: 0
+        }
+
     default:
       return state;
   }
