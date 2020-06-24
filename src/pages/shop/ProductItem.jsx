@@ -21,7 +21,6 @@ const ProductItem = ({product}) => {
         <p>{product.name}</p>
         <h3 className="text-left">${(product.price)}</h3>
         <div className="text-right">
-            <Link  to="/" className="btn btn-link btn-sm mr-2">Details</Link>
 
             {
               !itemInCart(product) &&
