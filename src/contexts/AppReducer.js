@@ -33,7 +33,8 @@ export const AppReducer = (state, action) => {
         return {
           shopCartItems: [],
           itemsCount: 0,
-          total: 0
+          total: 0,
+          checkOut: false
         }
 
     case "INCREMENT":
@@ -62,12 +63,6 @@ export const AppReducer = (state, action) => {
         checkOut: true
       }
 
-    case "CLEAR":
-      return {
-        shopCartItems: [],
-        itemsCount: 0,
-        total: 0
-      }
 
     default:
       return state;

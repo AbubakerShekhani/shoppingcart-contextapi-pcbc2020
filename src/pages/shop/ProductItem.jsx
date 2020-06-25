@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext';
-import styles from './shop.module.scss';
+
 
 const ProductItem = ({product}) => {
 
