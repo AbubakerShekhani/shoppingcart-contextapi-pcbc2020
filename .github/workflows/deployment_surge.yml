@@ -30,10 +30,7 @@ jobs:
     - uses: borales/actions-yarn@v2.0.0
       with:
         cmd: install # will run `yarn install` command
-        
-    - name: Install SASS
-      run: npm rebuild node-sass
-        
+
     - name: Build React App
       run: yarn build
       
