@@ -7,7 +7,7 @@ import styles from './Cart.module.scss';
 
 const ShoppingCart = () => {
 
-  const {shopCartItems, itemsCount, totalAmount, increment, decrement, clearCart, checkOut, handleCheckOut  } = useContext(ShoppingCartContext)
+  const {shopCartItems, itemsCount, totalAmount, clearCart, handleCheckOut  } = useContext(ShoppingCartContext)
 
   return (
 

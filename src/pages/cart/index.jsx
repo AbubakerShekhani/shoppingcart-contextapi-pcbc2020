@@ -1,13 +1,12 @@
 import React, { useContext } from 'react';
 import Main from '../../components/Main';
-import styles from './Cart.module.scss';
 
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext';
 import ShoppingCart from './ShoppingCart';
 
 const Cart = () => {
 
-  const { shopCartItems, itemsCount, totalAmount, increment, decrement, clearCart, checkOut, handleCheckOut } = useContext(ShoppingCartContext)
+  const { shopCartItems, checkOut } = useContext(ShoppingCartContext)
 
   return (
     <Main title="Cart" description="Shopping Cart" >
@@ -31,12 +30,6 @@ const Cart = () => {
                 <h2>Thank you for your order</h2>
               </div>
             }
-
-
-
-
-
-
     </Main>
   )
 }
