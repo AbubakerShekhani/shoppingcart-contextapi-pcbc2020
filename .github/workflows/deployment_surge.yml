@@ -27,6 +27,9 @@ jobs:
       with:
         node-version: 12
     
+    - name: Install SASS
+      run: npm rebuild node-sass && npm install
+    
     - uses: borales/actions-yarn@v2.0.0
       with:
         cmd: install # will run `yarn install` command
