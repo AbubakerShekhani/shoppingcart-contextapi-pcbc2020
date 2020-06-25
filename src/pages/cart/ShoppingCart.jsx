@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext';
 import ShoppingCartItem from './ShoppingCartItem';
 
-import styles from './Cart.module.scss';
+import styles from './ShoppingCart.module.scss';
 
 const ShoppingCart = () => {
 
